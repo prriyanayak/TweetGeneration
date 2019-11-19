@@ -2,6 +2,7 @@ from twitter import *
 import csv
 import random
 from getTweetsInTrending import getTrending
+from cleanData import cleanTheTweets
 
 consumer_key = "UDcWtz23Pqj8fZ2ynPoP0rvNl"
 consumer_secret = "Ms9hyFReK13kHcpcbGYknkZZCUEVUWSfFadGzR9j9ncodbueHn"
@@ -26,5 +27,8 @@ for location in results:
 
 trend = random.choice(trends)
 print(trend)
-print(getTrending(trend))
+# print(getTrending(trend))
+csvFileName = getTrending(trend)
+finalSet = cleanTheTweets(csvFileName)
+print(len(finalSet))
 

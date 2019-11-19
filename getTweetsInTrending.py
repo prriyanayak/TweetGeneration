@@ -1,7 +1,11 @@
 import tweepy
 import csv
 import pandas as pd
-from datetime import datetime
+import datetime
+from dateutil.relativedelta import relativedelta
+
+today = datetime.date.today()
+actualDate = today - relativedelta(months=2)
 
 ####input your credentials here
 consumer_key = "UDcWtz23Pqj8fZ2ynPoP0rvNl"
@@ -18,6 +22,7 @@ def getTrending(topic):
     csvFile = open(topic+'.csv', 'a')
     csvWriter = csv.writer(csvFile)
 
-    for tweet in tweepy.Cursor(api.search,q=topic,count=100, lang="en", since="2019-10-26").items():
-        csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
-    return "Done"
+    for tweet in tweepy.Cursor(api.search,q=topic,count=100, lang="en", since=actualDate).items():
+        # csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8')])
+        csvWriter.writerow([tweet.created_at, tweet.text.encode('ascii', 'ignore')])
+    return topic
