@@ -1,8 +1,8 @@
-import pandas
+import pandas as pd
 import re
 
 def cleanTheTweets(topic):
-    result = pandas.read_csv(topic+'.csv')
+    result = pd.read_csv(topic+'.csv')
 
     tweets = result.iloc[:, 1].tolist()
 
@@ -15,4 +15,20 @@ def cleanTheTweets(topic):
         i = i.replace("\\n", "")
         
         finaltweets.append(i)
-    return finaltweets
+
+    df = pd.DataFrame({'col':finaltweets})
+
+
+    df = df['col'].apply(lambda x: re.split('https:\/\/.*', str(x))[0])
+
+    list = []
+
+    for i in df: 
+        list.append(i)
+
+
+
+
+    return list
+
+
