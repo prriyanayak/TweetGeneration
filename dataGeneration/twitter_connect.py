@@ -12,8 +12,8 @@ access_token_secret = "wqWWy50LOhTZsf9ayYxDarI8Kf8nbwgUDBTto5NA9vsEF"
 # csv_columns = ['ID', 'Name']
 # api = twitter.Api(consumer_key=consumer_key, consumer_secret=consumer_secret, access_token_key=access_token_key, access_token_secret=access_token_secret)
 
-api = Twitter(auth = OAuth("2456487102-r2SpnynWDvvRrbtQ42K45qKBbcDrvQiBS0kTX9C", 
-                "wqWWy50LOhTZsf9ayYxDarI8Kf8nbwgUDBTto5NA9vsEF", "UDcWtz23Pqj8fZ2ynPoP0rvNl", "Ms9hyFReK13kHcpcbGYknkZZCUEVUWSfFadGzR9j9ncodbueHn"))
+api = Twitter(auth = OAuth(accessTokenKey, 
+                accessTokenSecret, consumerKey, consumerSecret))
 
 
 woeid_india = 2282863
