@@ -8,10 +8,10 @@ today = datetime.date.today()
 actualDate = today - relativedelta(months=3)
 
 ####input your credentials here
-consumer_key = "UDcWtz23Pqj8fZ2ynPoP0rvNl"
-consumer_secret = "Ms9hyFReK13kHcpcbGYknkZZCUEVUWSfFadGzR9j9ncodbueHn"
-access_token_key = "2456487102-r2SpnynWDvvRrbtQ42K45qKBbcDrvQiBS0kTX9C"
-access_token_secret = "wqWWy50LOhTZsf9ayYxDarI8Kf8nbwgUDBTto5NA9vsEF"   
+consumer_key = "***"
+consumer_secret = "***"
+access_token_key = "***"
+access_token_secret = "***"   
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token_key, access_token_secret)
